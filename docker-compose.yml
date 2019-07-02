@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+
+  app:
+    build: .
+    env_file:
+      - local.env
+    ports:
+      - "5000:5000"
+    depends_on:
+      - local_db
+    links:
+      - local_db
+    command: python run.py
+
+  local_db:
+    container_name: local_db
+    image: postgres:10.9
+    env_file:
+      - local.env
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+  
+  alembic:
+    build: .
+    volumes:
+      - ./alembic/versions:/usr/src/app/alembic/versions
+    links:
+      - local_db
+    depends_on:
+      - local_db
+    env_file:
+      - local.env
