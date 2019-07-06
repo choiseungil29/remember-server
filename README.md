@@ -6,7 +6,7 @@
 3. pip install -r requirements.txt
 4. docker-compose up -d local_db
 5. alembic 셋팅 ./scripts/alembic.sh upgrade head
-6. db 초기화 ./scripts/init.py
+6. db 초기화 python ./scripts/init.py
 7. 서버 실행 ./scripts/local_server.sh
 
 ## 개선 가능한 사항
