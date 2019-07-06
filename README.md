@@ -11,3 +11,6 @@
 
 ## 개선 가능한 사항
  - API Exception 별도로 생성하여 status code와 msg를 함께 함께 내려주도록 할 수 있음
+
+## 그 외
+ - 최초 관리자 계정은 admin/admin 으로 설정되어져 있습니다.
