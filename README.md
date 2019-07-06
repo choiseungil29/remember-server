@@ -9,5 +9,5 @@
 6. db 초기화 ./scripts/init.py
 7. 서버 실행 ./scripts/local_server.sh
 
-개선 가능한 사항
+## 개선 가능한 사항
  - API Exception 별도로 생성하여 status code와 msg를 함께 함께 내려주도록 할 수 있음
